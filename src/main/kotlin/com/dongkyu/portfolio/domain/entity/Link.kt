@@ -7,7 +7,11 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class Link: BaseEntity() {
+class Link(
+    name: String,
+    content: String,
+    isActive: Boolean
+): BaseEntity() {
 
 
 //   ID를 적어야 PK가 있어 인식
@@ -17,5 +21,9 @@ class Link: BaseEntity() {
     @Column(name = "link_id")
     var id: Long? = null
     // 자료형에 ?붙이면 null을 허용한다.
+    var name: String = name
+    var content: String = content
 
+    //is_Actice 로 JPA가 자동으로 매핑.
+    var isActive: Boolean = isActive
 }

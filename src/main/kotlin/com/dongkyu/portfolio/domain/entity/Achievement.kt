@@ -5,9 +5,16 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import java.time.LocalDate
 
 @Entity
-class Achievement: BaseEntity() {
+class Achievement(
+    title: String,
+    description: String,
+    achivedDate: LocalDate?,
+    host: String,
+    isActive: Boolean
+): BaseEntity() {
 
 
 //   ID를 적어야 PK가 있어 인식
@@ -18,4 +25,9 @@ class Achievement: BaseEntity() {
     var id: Long? = null
     // 자료형에 ?붙이면 null을 허용한다.
 
+    var title: String = title
+    var description: String = title
+    var achievedDate: LocalDate? = achivedDate
+    var host: String = host
+    var isActive: Boolean = isActive
 }
